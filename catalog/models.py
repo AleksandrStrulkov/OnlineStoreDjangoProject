@@ -6,7 +6,7 @@ NULLABLE = {'blank': True, 'null': True}
 
 class Product(models.Model):
 	name_product = models.CharField(max_length=100, verbose_name='Наименование')
-	description_product = models.TextField(verbose_name='Описание')
+	description_product = models.TextField(verbose_name='Описание', **NULLABLE)
 	image = models.ImageField(upload_to='products/', verbose_name='Изображение', **NULLABLE)
 	category = models.CharField(max_length=100, verbose_name='Категория')
 	price = models.IntegerField(verbose_name='Цена')
@@ -24,7 +24,7 @@ class Product(models.Model):
 
 class Category(models.Model):
 	name_category = models.CharField(max_length=100, verbose_name='Категория')
-	description_category = models.TextField('Описание')
+	description_category = models.TextField(verbose_name='Описание', **NULLABLE)
 
 	def __str__(self):
 		return f'{self.name_category}{self.description_category}'
