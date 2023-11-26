@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name_category": "Резисторы",
-      "description_category": null
+      "description_category": ""
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "name_category": "Транзисторы",
-      "description_category": null
+      "description_category": ""
     }
   },
   {
@@ -20,7 +20,7 @@
     "pk": 3,
     "fields": {
       "name_category": "Конденсаторы",
-      "description_category": null
+      "description_category": ""
     }
   },
   {
@@ -28,7 +28,7 @@
     "pk": 4,
     "fields": {
       "name_category": "Диоды",
-      "description_category": null
+      "description_category": ""
     }
   },
   {
@@ -36,7 +36,7 @@
     "pk": 5,
     "fields": {
       "name_category": "Реле",
-      "description_category": null
+      "description_category": ""
     }
   },
   {
@@ -44,7 +44,7 @@
     "pk": 6,
     "fields": {
       "name_category": "Датчики",
-      "description_category": null
+      "description_category": ""
     }
   },
   {
@@ -52,7 +52,7 @@
     "pk": 7,
     "fields": {
       "name_category": "Микросхемы",
-      "description_category": null
+      "description_category": ""
     }
   }
 ]

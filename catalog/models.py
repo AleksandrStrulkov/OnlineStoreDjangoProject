@@ -4,6 +4,7 @@ from django.db import models
 
 NULLABLE = {'blank': True, 'null': True}
 
+
 class Product(models.Model):
 	name_product = models.CharField(max_length=100, verbose_name='Наименование')
 	description_product = models.TextField(verbose_name='Описание', **NULLABLE)
