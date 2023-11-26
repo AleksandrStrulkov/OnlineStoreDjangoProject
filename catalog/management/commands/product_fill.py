@@ -11,7 +11,7 @@ class Command(BaseCommand):
 										   'предназначены для работы в цепях постоянного, '
 										   'переменного и импульсного тока.',
 					'image': '',
-					'category': Category.objects.get(pk=1),
+					'name_category': Category.objects.get(pk=1),
 					'price': '9',
 					'created_at': '2023-01-09',
 					'updated_at': '2023-11-26'
@@ -24,7 +24,7 @@ class Command(BaseCommand):
 										   'Сопротивление канала в открытом состоянии 38 мОм '
 										   '(при Vgs=10 В, Id =10 А).',
 					'image': '',
-					'category': Category.objects.get(pk=2),
+					'name_category': Category.objects.get(pk=2),
 					'price': '12',
 					'created_at': '2023-01-09',
 					'updated_at': '2023-11-26'
@@ -39,7 +39,7 @@ class Command(BaseCommand):
 										   'Рабочее напряжение от нескольких десятков вольт до '
 										   'десятков киловольт.',
 					'image': '',
-					'category': Category.objects.get(pk=3),
+					'name_category': Category.objects.get(pk=3),
 					'price': '2',
 					'created_at': '2023-01-09',
 					'updated_at': '2023-11-26'
@@ -52,7 +52,7 @@ class Command(BaseCommand):
 										   'Предназначен для защиты цепей от помех, вызванных '
 										   'грозовыми разрядами, переходными процессами и прочих.',
 					'image': '',
-					'category': Category.objects.get(pk=4),
+					'name_category': Category.objects.get(pk=4),
 					'price': '12',
 					'created_at': '2023-01-09',
 					'updated_at': '2023-11-26'
@@ -66,7 +66,7 @@ class Command(BaseCommand):
 										   'На разъемах расположены зажимы выводов переключающих '
 										   'контактов и катушки.',
 					'image': '',
-					'category': Category.objects.get(pk=3),
+					'name_category': Category.objects.get(pk=5),
 					'price': '330',
 					'created_at': '2023-01-09',
 					'updated_at': '2023-11-26'

@@ -29,11 +29,11 @@ class Product(models.Model):
 	image = models.ImageField(upload_to='products/', verbose_name='Изображение', **NULLABLE)
 	name_category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
 	price = models.IntegerField(verbose_name='Цена')
-	created_at = models.DateField(auto_now_add=True, verbose_name='Дата создания')
-	updated_at = models.DateTimeField(auto_now=True, verbose_name='Последнее изменение')
+	created_at = models.DateField(verbose_name='Дата создания')
+	updated_at = models.DateField(auto_now=True, verbose_name='Последнее изменение')
 
 	def __str__(self):
-		return f'{self.name_product}{self.description_product}{self.image}{self.name_category}{self.price}' \
+		return f'{self.name_product}{self.description_product}{self.name_category}{self.price}' \
 			   f'{self.created_at}{self.updated_at}'
 
 	class Meta:
