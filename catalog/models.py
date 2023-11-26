@@ -11,7 +11,7 @@ class Category(models.Model):
 	description_category = models.TextField(verbose_name='Описание', **NULLABLE)
 
 	def __str__(self):
-		return f'{self.name_category}{self.description_category}'
+		return f'{self.name_category}'
 
 	class Meta:
 		verbose_name = 'Категория'
@@ -27,18 +27,23 @@ class Product(models.Model):
 	name_product = models.CharField(max_length=100, verbose_name='Наименование')
 	description_product = models.TextField(verbose_name='Описание', **NULLABLE)
 	image = models.ImageField(upload_to='products/', verbose_name='Изображение', **NULLABLE)
-	category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+	name_category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
 	price = models.IntegerField(verbose_name='Цена')
 	created_at = models.DateField(auto_now_add=True, verbose_name='Дата создания')
 	updated_at = models.DateTimeField(auto_now=True, verbose_name='Последнее изменение')
 
 	def __str__(self):
-		return f'{self.name_product}{self.description_product}{self.image}{self.category}{self.price}' \
+		return f'{self.name_product}{self.description_product}{self.image}{self.name_category}{self.price}' \
 			   f'{self.created_at}{self.updated_at}'
 
 	class Meta:
 		verbose_name = 'Товар'
 		verbose_name_plural = 'Товары'
+
+	@classmethod
+	def truncate_table_restart_id(cls):
+		with connection.cursor() as cursor:
+			cursor.execute(f'ALTER SEQUENCE catalog_product_id_seq RESTART WITH 1;')
 
 
 

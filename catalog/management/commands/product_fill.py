@@ -79,5 +79,8 @@ class Command(BaseCommand):
 			category_for_create.append(Product(**category_item))
 
 		Product.objects.all().delete()
+		Product.truncate_table_restart_id()
 		Product.objects.bulk_create(category_for_create)
-		call_command('dumpdata', 'product(json)')
+
+
+
