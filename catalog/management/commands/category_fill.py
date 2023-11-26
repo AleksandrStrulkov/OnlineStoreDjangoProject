@@ -1,7 +1,5 @@
 from django.core.management import BaseCommand
-import json
 from catalog.models import Category
-import psycopg2
 
 
 class Command(BaseCommand):
@@ -46,5 +44,6 @@ class Command(BaseCommand):
 			category_for_create.append(Category(**category_item))
 
 		Category.objects.all().delete()
+		Category.truncate_table_restart_id()
 		Category.objects.bulk_create(category_for_create)
 
