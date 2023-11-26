@@ -1,8 +1,8 @@
 from django.db import models
 
 # Create your models here.
-NULLABLE = {'blank': True, 'null': True}
 
+NULLABLE = {'blank': True, 'null': True}
 
 class Product(models.Model):
 	name_product = models.CharField(max_length=100, verbose_name='Наименование')
