@@ -8,11 +8,11 @@
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <h5 class="card-text">Категория:</h5>
-                            <p class="card-text">{{ object.name_category}}</p>
+                            <p class="card-text">{{ object.name_category| title }}</p>
                             <h5 class="card-text">Наименование:</h5>
-                            <p class="card-text">{{ object.name_product }}</p>
+                            <p class="card-text">{{ object.name_product| title }}</p>
                             <h5 class="card-text">Описание:</h5>
-                            <p class="card-text">{{ object.description_product}}</p>
+                            <p class="card-text">{{ object.description_product }}</p>
 {#                            <p class="card-text">{{ object.description_product|split:'100'}}</p>#}
                             <h5 class="card-text">Дата создания:</h5>
                             <p class="card-text">{{ object.created_at }}</p>
@@ -20,8 +20,7 @@
                             <p class="card-text">{{ object.price }} руб.</p>
                             <h5 class="card-text">Дата изменения:</h5>
                             <p class="card-text">{{ object.updated_at }}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            </div>
+                            <div class="d-flex justify-content-between align-items-center"></div>
                         </div>
                     </div>
                 </div>
