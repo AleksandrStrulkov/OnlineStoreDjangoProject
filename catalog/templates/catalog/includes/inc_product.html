@@ -4,8 +4,7 @@
         <img class="card-img-top object-fit-cover " style="height:250px;"
                 {#             src="/catalog/media/{{ object.image }}">#}
              src="{{ object.image|mymedia }}"
-{#             src="{% mediapath object.image%}"#}
-
+{#             src="{% mymedia object.image%}"#}
              alt="Card image cap">
         <div class="card-body">
             <p class="card-text">{{ object.name_category }}</p>
