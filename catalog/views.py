@@ -3,9 +3,18 @@ from django.shortcuts import render
 from catalog.models import Product, Category
 
 
-# Create your views here.
+# def home(request):
+# 	return render(request, 'catalog/home.html')
+
+
 def home(request):
-	return render(request, 'catalog/home.html')
+	category_item = Product.objects.all()
+	context = {
+			'object_list': category_item,
+			'title': 'Каталог'
+	}
+	return render(request, 'catalog/home.html', context)
+	# return render(request, 'catalog/home.html')
 
 
 def contacts(request):
@@ -27,10 +36,19 @@ def products(request):
 	return render(request, 'catalog/products.html', context)
 
 
-def product(request, pk):
-	category_item = Category.objects.get(pk=pk)
+# def product(request, pk):
+# 	category_item = Category.objects.get(pk=pk)
+# 	context = {
+# 			'object_list': Product.objects.filter(name_category_id=pk),
+# 			'title': f'Вы выбрали: {category_item.name_category}'
+# 	}
+# 	return render(request, 'catalog/product.html', context)
+
+
+def one_product(request, pk):
+	category_item = Product.objects.get(pk=pk)
 	context = {
-			'object_list': Product.objects.filter(name_category_id=pk),
-			'title': f'Вы выбрали: {category_item.name_category}'
+			'object_list': category_item,
+			'title': f'{category_item.name_product}'
 	}
 	return render(request, 'catalog/product.html', context)

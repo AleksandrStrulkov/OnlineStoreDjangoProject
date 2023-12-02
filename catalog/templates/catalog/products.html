@@ -3,7 +3,25 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
             {% for object in object_list %}
-                {% include 'catalog/includes/inc_product.html'%}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        {#        <img class="card-img-top object-fit-cover " style="height:250px;"#}
+                        {#                src="/catalog/media/{{ object.image }}">#}
+                        {#                src="{{ object.image|mymedia }}"#}
+                        {#             src="{% mediapath object.image %}">#}
+                        {#             alt="Card image cap"/>#}
+                        <div class="card-body">
+                            <p class="card-text">{{ object }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="{% url 'catalog:one_product' object.pk %}" type="button" class="btn btn-sm
+                                        btn-outline-secondary">К товару</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {#                {% include 'catalog/includes/inc_product.html'%}#}
             {% endfor %}
         </div>
     </div>
