@@ -5,11 +5,11 @@
             {% for object in object_list %}
                 <div class="col">
                     <div class="card shadow-sm">
-                        {#        <img class="card-img-top object-fit-cover " style="height:250px;"#}
-                        {#                src="/catalog/media/{{ object.image }}">#}
-                        {#                src="{{ object.image|mymedia }}"#}
-                        {#             src="{% mediapath object.image %}">#}
-                        {#             alt="Card image cap"/>#}
+                        <img class="card-img-top object-fit-cover " style="height:250px;"
+                             src="/catalog/media/{{ object.image }}">
+                        src="{{ object.image|mymedia }}"
+                        src="{% mediapath object.image %}">
+                        alt="Card image cap"/>
                         <div class="card-body">
                             <p class="card-text">{{ object }}</p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                {#                {% include 'catalog/includes/inc_product.html'%}#}
+                {% include 'catalog/includes/inc_product.html' %}
             {% endfor %}
         </div>
     </div>

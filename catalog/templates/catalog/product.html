@@ -6,18 +6,18 @@
                 <div class="col">
                     <div class="card shadow-sm">
                         <div class="card-body">
-{#                            <h5 class="card-text">Категория:</h5>#}
-                            <p class="card-text">{{object.name_category}}</p>
-{#                            <h5 class="card-text">Наименование:</h5>#}
-                            <p class="card-text">{{ object.name_product| title }}</p>
-{#                            <h5 class="card-text">Описание:</h5>#}
-                            <p class="card-text">{{ object.description_product}}</p>
-{#                            <h5 class="card-text">Дата создания:</h5>#}
-                            <p class="card-text">{{ object.created_at }}</p>
-{#                            <h5 class="card-text">Стоимость:</h5>#}
-                            <p class="card-text">{{ object.price }}</p>
-{#                            <h5 class="card-text">Дата изменения:</h5>#}
-                            <p class="card-text">{{ object.updated_at }}</p>
+                            <h5 class="card-text">Категория:</h5>
+                            <p class="card-text">{{object_list.name_category}}</p>
+                            <h5 class="card-text">Наименование:</h5>
+                            <p class="card-text">{{ object_list.name_product| title }}</p>
+                            <h5 class="card-text">Описание:</h5>
+                            <p class="card-text">{{ object_list.description_product}}</p>
+                            <h5 class="card-text">Дата создания:</h5>
+                            <p class="card-text">{{ object_list.created_at }}</p>
+                            <h5 class="card-text">Стоимость:</h5>
+                            <p class="card-text">{{ object_list.price }}</p>
+                            <h5 class="card-text">Дата изменения:</h5>
+                            <p class="card-text">{{ object_list.updated_at }}</p>
                             <div class="d-flex justify-content-between align-items-center"></div>
                         </div>
                     </div>

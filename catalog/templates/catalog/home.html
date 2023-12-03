@@ -6,26 +6,54 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <img class="card-img-top object-fit-cover " style="height:250px;"
+                            {#src="/catalog/media/{{ object.image }}">#}
+                            {#                src="{{ object.image|mymedia }}"#}
                          src="{% mediapath object.image %}">
+                    {#             alt="Card image cap"/>#}
                     <div class="card-body">
-{#                        <h5 class="card-text">Наименование:</h5>#}
-{#                        <p class="card-text">{{ object.price}}</p>#}
-                        <h2 class="card-title pricing-card-title">{{ object.price }} ₽</h2>
-                        <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                            <li>Описание: {{ object.description_product|truncatechars:100 }}</li>
-                            <li>Категория: {{ object.name_category }}</li>
-                            <li>Дата последнего изменения: {{ object.updated_at }}</li>
-
-
+                        <h5 class="card-text">{{ object.name_product }}</h5>
+                        <h5 class="card-text">{{ object.description_product|truncatechars:50 }}</h5>
+                        <h5 class="card-text">Цена: {{ object.price }} ₽</h5>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{% url 'catalog:one_product' object.pk %}"
-                                   type="button" class="btn btn-smbtn-outline-secondary">К товару</a>
+                                <a href="/one_product/{{ object.pk }}" type="button" class="btn btn-sm
+{#                                <a href="{% url 'catalog:one_product' object.pk %}" type="button" class="btn btn-sm#}
+                                    btn-outline-secondary">К товару</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+{#            <div class="col">#}
+{#                <div class="card shadow-sm">#}
+{#                    <img class="card-img-top object-fit-cover " style="height:250px;"#}
+{#                         src="{% mediapath object.image %}">#}
+{#                    <div class="card-body">#}
+{#                        <h5 class="card-text">Наименование:</h5>#}
+{#                        <p class="card-text">{{ object.price }}</p>#}
+{#                        <h2 class="card-title pricing-card-title">{{ object.price }} ₽</h2>#}
+{#                        <ul class="list-unstyled mt-3 mb-4 text-start m-3">#}
+{#                            <li>Описание: {{ object.description_product|truncatechars:100 }}</li>#}
+{#                            <li>Категория: {{ object.name_category }}</li>#}
+{#                            <li>Дата последнего изменения: {{ object.updated_at }}</li>#}
+{#                            <div class="d-flex justify-content-between align-items-center">#}
+{#                                <div class="btn-group">#}
+{#                                    <a href="{% url 'catalog:one_product' object.pk %}"#}
+{#                                       type="button" class="btn btn-smbtn-outline-secondary">К товару</a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
         {% endfor %}
     </div>
 {% endblock %}

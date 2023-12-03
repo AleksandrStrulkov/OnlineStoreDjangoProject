@@ -8,9 +8,9 @@ from catalog.models import Product, Category
 
 
 def home(request):
-	category_item = Product.objects.all()
+	product_item = Product.objects.all()
 	context = {
-			'object_list': category_item,
+			'object_list': product_item,
 			'title': 'Каталог'
 	}
 	return render(request, 'catalog/home.html', context)
@@ -28,27 +28,27 @@ def contacts(request):
 	return render(request, 'catalog/contacts.html')
 
 
-def products(request):
-	context = {
-			'object_list': Category.objects.all(),
-			'title': 'Все наши комплектующие'
-	}
-	return render(request, 'catalog/products.html', context)
-
-
-# def product(request, pk):
-# 	category_item = Category.objects.get(pk=pk)
+# def products(request):
 # 	context = {
-# 			'object_list': Product.objects.filter(name_category_id=pk),
-# 			'title': f'Вы выбрали: {category_item.name_category}'
+# 			'object_list': Category.objects.all(),
+# 			'title': 'Все наши комплектующие'
 # 	}
-# 	return render(request, 'catalog/product.html', context)
+# 	return render(request, 'catalog/products.html', context)
+
+
+def product(request, pk):
+	category_item = Category.objects.get(pk=pk)
+	context = {
+			'object_list': Product.objects.filter(name_category_id=pk),
+			'title': f'Вы выбрали: {category_item.name_category}'
+	}
+	return render(request, 'catalog/product.html', context)
 
 
 def one_product(request, pk):
-	category_item = Product.objects.get(pk=pk)
+	product_item = Product.objects.get(pk=pk)
 	context = {
-			'object_list': category_item,
-			'title': f'{category_item.name_product}'
+			'object_list': product_item,
+			'title': f'{product_item.name_product}'
 	}
-	return render(request, 'catalog/product.html', context)
+	return render(request, 'catalog/one_product.html', context)

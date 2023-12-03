@@ -7,7 +7,7 @@ register = template.Library()
 @register.filter()
 def mymedia(validate):
     if validate:
-        return f'/media/{validate}'
+        return f'/media/category/{validate}'
     return ''
 
 
